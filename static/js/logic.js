@@ -1,4 +1,4 @@
-d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson").then(function(data){
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson").then(function(data){
     console.log(data);
     console.log(data.features[0].geometry.coordinates[0])
     var quakeMarkers = [];
@@ -14,7 +14,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
             color: "red",
             fillColor: "red",
             fillOpacity: .5 + depth/1200,
-            radius: magnitude * 20000
+            radius: magnitude * 25000
           }).addTo(myMap).bindPopup(
             `Location: ${place}<br />
              Magnitude: ${magnitude}<br />
